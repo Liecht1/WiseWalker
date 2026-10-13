@@ -43,24 +43,24 @@
 
     :root {
       /* Official WalkWise Color Palette */
-      --primary-green: #0F3D33;   /* Trust & Nature */
-      --sage-green: #6B8F71;      /* Comfort & Calm */
-      --light-green: #C4D6C3;     /* Balance */
-      --warm-beige: #F5E9D7;      /* City & Sand */
-      --sunset-gold: #D9A86C;     /* Warmth & Wellness */
+      --primary-green: #0F3D33;   /* Primary Green (Trust & Nature) */
+      --sage-green: #6B8F71;      /* Sage Green (Comfort & Calm) */
+      --light-green: #C4D6C3;     /* Light Green (Balance) */
+      --warm-beige: #F5E9D7;      /* Warm Beige (City & Sand) */
+      --sunset-gold: #D9A86C;     /* Sunset Gold (Warmth & Wellness) */
       
-      /* Accessible Surface & Text Tokens */
+      /* Supporting Surface & Text Design Tokens */
       --surface: #FFFFFF;
       --surface-ivory: #FCF8F1;
       --surface-muted: #F8F3EA;
       --text-ink: #0F3D33;
       --text-muted: #536A5E;
-      --border-subtle: #E3D9C9;
+      --border-subtle: #E2D7C3;
       --border-line: #D5D9CA;
       --focus-ring: #D9A86C;
       --shadow-sm: 0 2px 8px rgba(15, 61, 51, 0.05);
-      --shadow-md: 0 6px 20px rgba(15, 61, 51, 0.08);
-      --shadow-lg: 0 20px 48px rgba(15, 61, 51, 0.12);
+      --shadow-md: 0 8px 24px rgba(15, 61, 51, 0.09);
+      --shadow-lg: 0 24px 60px rgba(15, 61, 51, 0.14);
       --radius-sm: 10px;
       --radius-md: 16px;
       --radius-lg: 24px;
@@ -97,7 +97,7 @@
     }
 
     button:active {
-      transform: scale(0.98);
+      transform: scale(0.97);
     }
 
     button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
@@ -110,21 +110,21 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 56px;
-      padding: 48px 24px;
-      max-width: 1320px;
+      gap: 48px;
+      padding: 40px 24px;
+      max-width: 1360px;
       margin: 0 auto;
       min-height: 100vh;
     }
 
     /* Left Brand Showcase Column */
     .brand-showcase {
-      width: 420px;
+      width: 430px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      padding: 32px;
+      gap: 20px;
+      padding: 28px;
       background: var(--surface-ivory);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
@@ -137,69 +137,74 @@
       scrollbar-color: var(--sage-green) transparent;
     }
 
-    .brand-showcase::-webkit-scrollbar {
-      width: 6px;
-    }
+    .brand-showcase::-webkit-scrollbar { width: 6px; }
     .brand-showcase::-webkit-scrollbar-thumb {
       background-color: var(--sage-green);
       border-radius: 3px;
     }
 
-    .brand-showcase .header-logo {
+    .brand-header-wrap {
       display: flex;
-      align-items: center;
-      gap: 14px;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .brand-showcase .arabic-tagline {
+    .brand-logo-img {
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-arabic-slogan {
       font-family: "Noto Sans Arabic", Tahoma, sans-serif;
       font-size: 19px;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--primary-green);
       text-align: right;
       direction: rtl;
-      padding: 6px 0 0;
-    }
-
-    .brand-showcase h1 {
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--primary-green);
-      letter-spacing: -0.5px;
-    }
-
-    .brand-showcase .concept-text {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-muted);
+      line-height: 1.5;
     }
 
     .brand-card {
       background: var(--surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 18px;
+      padding: 16px 18px;
     }
 
     .brand-card h4 {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--primary-green);
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+    }
+
+    .brand-card h2 {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--primary-green);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .brand-card .concept-desc {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
     }
 
     /* Palette Swatches */
     .palette-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin-top: 8px;
+      gap: 6px;
+      margin-top: 6px;
     }
 
     .palette-item {
@@ -208,22 +213,22 @@
 
     .swatch {
       width: 100%;
-      height: 40px;
+      height: 38px;
       border-radius: var(--radius-sm);
-      border: 1px solid rgba(15, 61, 51, 0.1);
-      margin-bottom: 6px;
+      border: 1px solid rgba(15, 61, 51, 0.12);
+      margin-bottom: 5px;
       box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
     }
 
     .swatch-code {
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 9.5px;
+      font-weight: 700;
       color: var(--primary-green);
       display: block;
     }
 
     .swatch-name {
-      font-size: 9px;
+      font-size: 8.5px;
       color: var(--text-muted);
       display: block;
       line-height: 1.2;
@@ -241,14 +246,14 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-full);
       padding: 6px 14px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       color: var(--text-ink);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      min-height: 36px;
+      min-height: 34px;
       min-width: auto;
     }
 
@@ -258,24 +263,44 @@
       border-color: var(--primary-green);
     }
 
+    /* Visual Direction Badges */
+    .visual-dir-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .visual-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--surface-muted);
+      border: 1px solid var(--border-subtle);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-green);
+    }
+
     .brand-features-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
     .brand-feature {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-size: 12px;
       color: var(--text-ink);
       font-weight: 500;
     }
 
     .brand-feature .icon-badge {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: var(--light-green);
       color: var(--primary-green);
@@ -286,7 +311,7 @@
 
     .quote-box {
       border-left: 3px solid var(--sunset-gold);
-      padding: 6px 0 6px 14px;
+      padding: 6px 0 6px 12px;
       font-size: 12px;
       font-style: italic;
       color: var(--text-ink);
@@ -346,12 +371,12 @@
       height: 900px;
     }
 
-    /* Dynamic Island / Status Bar */
+    /* Status Bar */
     .status-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 26px 8px;
+      padding: 12px 24px 6px;
       font-size: 12px;
       font-weight: 600;
       color: var(--text-ink);
@@ -362,13 +387,13 @@
     }
 
     .notch {
-      width: 110px;
-      height: 24px;
+      width: 105px;
+      height: 22px;
       background: #000;
       border-radius: 14px;
       position: absolute;
       left: 50%;
-      top: 10px;
+      top: 9px;
       transform: translateX(-50%);
     }
 
@@ -401,7 +426,7 @@
       background: var(--surface);
       border-top: 1px solid var(--border-line);
       display: flex;
-      padding: 8px 12px 22px;
+      padding: 8px 12px 20px;
       flex-shrink: 0;
       z-index: 20;
     }
@@ -411,7 +436,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       color: var(--text-muted);
       font-size: 10px;
       font-weight: 500;
@@ -425,7 +450,7 @@
       border-radius: var(--radius-sm);
       display: grid;
       place-items: center;
-      transition: background-color 0.2s ease, transform 0.2s ease;
+      transition: background-color 0.2s ease;
     }
 
     .bottom-nav button.active {
@@ -439,8 +464,7 @@
     }
 
     /* Common Components & Styles */
-    .pad { padding: 20px; }
-    .pad-sm { padding: 12px 20px; }
+    .pad { padding: 18px 20px; }
 
     .icon {
       width: 22px;
@@ -456,13 +480,13 @@
     }
 
     .icon-sm { width: 16px; height: 16px; stroke-width: 1.8; }
-    .icon-lg { width: 28px; height: 28px; stroke-width: 1.8; }
+    .icon-lg { width: 26px; height: 26px; stroke-width: 1.8; }
 
     .btn-primary {
       background: var(--primary-green);
       color: #FFFFFF;
       border-radius: var(--radius-md);
-      padding: 14px 20px;
+      padding: 13px 20px;
       font-size: 14px;
       font-weight: 600;
       display: flex;
@@ -470,7 +494,7 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
-      box-shadow: 0 4px 12px rgba(15, 61, 51, 0.2);
+      box-shadow: 0 4px 12px rgba(15, 61, 51, 0.18);
     }
     .btn-primary:hover {
       background: #144f42;
@@ -481,7 +505,7 @@
       color: var(--primary-green);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 12px 18px;
+      padding: 11px 16px;
       font-size: 13px;
       font-weight: 600;
       display: flex;
@@ -492,8 +516,8 @@
     }
 
     .btn-circle {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: var(--surface);
       border: 1px solid var(--border-subtle);
@@ -508,61 +532,52 @@
       background: var(--surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 18px;
+      padding: 16px;
       box-shadow: var(--shadow-sm);
     }
 
-    /* Screen 1: Home Styles */
-    .home-header {
+    /* Screen 1: Home Styles (Exact Mockup 1) */
+    .home-top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 20px;
+      padding: 10px 20px 4px;
+      position: relative;
+      z-index: 5;
     }
 
-    .hero-banner {
+    .hero-banner-container {
       position: relative;
-      background: linear-gradient(180deg, #F9F5EC 0%, var(--warm-beige) 100%);
-      padding: 24px 20px 32px;
+      background: linear-gradient(180deg, #FAF6EE 0%, #EFE5D2 100%);
+      padding: 18px 20px 30px;
       border-radius: 0 0 28px 28px;
+      border-bottom: 1px solid var(--border-subtle);
       text-align: center;
       overflow: hidden;
-      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 190px;
     }
 
-    .hero-skyline {
+    .hero-corniche-art {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       width: 100%;
-      height: 120px;
-      opacity: 0.35;
+      height: 130px;
       pointer-events: none;
     }
 
-    .logo-hero-wrap {
+    .hero-brand-center {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-    }
-
-    .logo-hero-svg {
-      width: 220px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .arabic-hero-slogan {
-      font-family: "Noto Sans Arabic", Tahoma, sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary-green);
-      direction: rtl;
-      margin-top: 4px;
+      gap: 6px;
     }
 
     /* Search Card */
@@ -570,10 +585,10 @@
       background: var(--surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 20px;
-      margin: -24px 20px 20px;
+      padding: 18px;
+      margin: -18px 18px 18px;
       position: relative;
-      z-index: 5;
+      z-index: 6;
       box-shadow: var(--shadow-md);
     }
 
@@ -581,15 +596,15 @@
       font-size: 16px;
       font-weight: 700;
       color: var(--primary-green);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .search-inputs-wrap {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       position: relative;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .search-fields {
@@ -607,7 +622,7 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 0 14px;
-      height: 48px;
+      height: 46px;
     }
 
     .search-field input {
@@ -622,8 +637,8 @@
     .search-field input:focus { outline: none; }
 
     .btn-swap {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: var(--surface);
       border: 1px solid var(--border-subtle);
@@ -636,10 +651,10 @@
 
     /* Customize Your Route Section */
     .section-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--primary-green);
-      margin: 16px 0 12px;
+      margin: 10px 0 12px;
       padding: 0 20px;
       display: flex;
       justify-content: space-between;
@@ -648,8 +663,8 @@
 
     .custom-filters-scroll {
       display: flex;
-      gap: 12px;
-      padding: 0 20px 8px;
+      gap: 10px;
+      padding: 0 18px 8px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -660,14 +675,14 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
-      min-width: 68px;
+      min-width: 66px;
       cursor: pointer;
     }
 
     .custom-filter-bubble {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
       background: var(--warm-beige);
       border: 1.5px solid transparent;
       display: grid;
@@ -685,12 +700,12 @@
     }
 
     .custom-filter-bubble.gold {
-      background: #fae8d2;
-      color: #9c6c2e;
+      background: #FDF1E2;
+      color: #9C6C2E;
     }
     .custom-filter-bubble.gold.active {
       background: var(--sunset-gold);
-      color: #fff;
+      color: #FFFFFF;
     }
 
     .custom-filter-label {
@@ -705,12 +720,12 @@
       font-weight: 700;
     }
 
-    /* Screen 2: Explore Routes Styles */
+    /* Screen 2: Explore Routes Styles (Exact Mockup 2) */
     .explore-top-bar {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 20px;
+      padding: 12px 18px;
       background: var(--surface);
       border-bottom: 1px solid var(--border-line);
     }
@@ -749,7 +764,7 @@
 
     .view-toggle-bar {
       display: flex;
-      padding: 10px 20px 0;
+      padding: 10px 18px 0;
       gap: 8px;
     }
 
@@ -770,15 +785,15 @@
       border-color: var(--primary-green);
     }
 
-    /* Interactive Map Component */
+    /* Interactive Coastal Map */
     .interactive-map-wrap {
       position: relative;
-      margin: 12px 20px 16px;
+      margin: 12px 18px 16px;
       border-radius: var(--radius-lg);
       overflow: hidden;
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-sm);
-      height: 420px;
+      height: 430px;
       background: #E8F0EA;
     }
 
@@ -803,16 +818,14 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       z-index: 10;
     }
-    .map-route-bubble:hover {
-      transform: scale(1.04);
-    }
+    .map-route-bubble:hover { transform: scale(1.04); }
 
     .bubble-comfort {
       background: var(--primary-green);
       color: #FFFFFF;
       border: 2px solid #FFFFFF;
-      top: 130px;
-      right: 20px;
+      top: 135px;
+      right: 18px;
     }
 
     .bubble-shortest {
@@ -820,16 +833,16 @@
       color: var(--primary-green);
       border: 2px solid var(--sunset-gold);
       bottom: 120px;
-      left: 20px;
+      left: 18px;
     }
 
-    /* Map Legend Bar */
+    /* Map Legend Bar (Mockup 2) */
     .map-legend-bar {
       position: absolute;
       bottom: 12px;
       left: 12px;
       right: 12px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(8px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
@@ -849,43 +862,16 @@
       gap: 5px;
     }
 
-    /* Amenity Pin Tooltip */
-    .amenity-tooltip {
-      position: absolute;
-      background: var(--primary-green);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 11px;
-      font-weight: 600;
-      pointer-events: none;
-      z-index: 30;
-      transform: translate(-50%, -100%);
-      margin-top: -8px;
-      box-shadow: var(--shadow-md);
-      white-space: nowrap;
-    }
-    .amenity-tooltip::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 5px;
-      border-style: solid;
-      border-color: var(--primary-green) transparent transparent transparent;
-    }
-
-    /* Screen 3: Compare Routes Styles */
+    /* Screen 3: Compare Routes Styles (Exact Mockup 3) */
     .compare-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 16px 20px 8px;
+      padding: 14px 18px 8px;
     }
 
     .compare-header h2 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       color: var(--primary-green);
     }
@@ -893,8 +879,8 @@
     .compare-cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      padding: 8px 20px 16px;
+      gap: 10px;
+      padding: 8px 18px 14px;
     }
 
     .route-card {
@@ -906,7 +892,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.2s ease;
     }
 
@@ -952,13 +938,13 @@
     }
 
     .route-time-text {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--text-muted);
     }
 
     .route-mini-map {
-      height: 56px;
+      height: 54px;
       background: var(--warm-beige);
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -971,20 +957,18 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       padding: 16px;
-      margin: 0 20px 20px;
+      margin: 0 18px 18px;
     }
 
     .matrix-row {
       display: grid;
       grid-template-columns: 110px 1fr 1fr;
       align-items: center;
-      padding: 12px 0;
+      padding: 11px 0;
       border-bottom: 1px solid var(--border-line);
       font-size: 12px;
     }
-    .matrix-row:last-child {
-      border-bottom: 0;
-    }
+    .matrix-row:last-child { border-bottom: 0; }
 
     .matrix-label {
       font-weight: 600;
@@ -1009,27 +993,15 @@
       align-items: center;
       justify-content: center;
     }
-    .icon-repeater svg {
-      width: 15px;
-      height: 15px;
-    }
-    .icon-repeater.active svg {
-      color: var(--primary-green);
-      stroke: var(--primary-green);
-    }
-    .icon-repeater.muted svg {
-      color: #A0B2A6;
-      stroke: #A0B2A6;
-    }
-    .icon-repeater.blue svg {
-      color: #2F7C85;
-      stroke: #2F7C85;
-    }
+    .icon-repeater svg { width: 15px; height: 15px; }
+    .icon-repeater.active svg { color: var(--primary-green); stroke: var(--primary-green); }
+    .icon-repeater.muted svg { color: #A0B2A6; stroke: #A0B2A6; }
+    .icon-repeater.blue svg { color: #2F7C85; stroke: #2F7C85; }
 
     /* Hourly Planner Styles */
     .hourly-row {
       display: grid;
-      grid-template-columns: 54px 1fr 40px 40px;
+      grid-template-columns: 52px 1fr 40px 40px;
       gap: 8px;
       align-items: center;
       padding: 12px 14px;
@@ -1062,41 +1034,57 @@
     /* Toast Notification */
     .toast-msg {
       position: absolute;
-      bottom: 90px;
-      left: 20px;
-      right: 20px;
+      bottom: 86px;
+      left: 18px;
+      right: 18px;
       background: var(--primary-green);
       color: #FFFFFF;
-      padding: 12px 18px;
+      padding: 12px 16px;
       border-radius: var(--radius-md);
       font-size: 12px;
       font-weight: 600;
       text-align: center;
       box-shadow: var(--shadow-lg);
       z-index: 100;
-      animation: fadeIn 0.2s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Flex min-width shrink protection */
+    .search-fields, .search-field, .search-field input, .route-query-pill {
+      min-width: 0;
+    }
+    .bottom-nav button {
+      min-width: 0;
     }
 
-    /* Responsive Breakdown */
+    /* Responsive Adaptation for Mobile Devices */
     @media (max-width: 860px) {
+      body {
+        background-color: var(--surface-ivory);
+      }
       .workspace {
         padding: 0;
+        margin: 0 auto;
         gap: 0;
+        display: flex;
+        justify-content: center;
+        min-height: 100dvh;
+        width: 100%;
       }
-      .brand-showcase {
+      .brand-showcase, .phone-toggle-bar {
         display: none;
       }
-      .phone-toggle-bar {
-        display: none;
+      .phone-container {
+        width: 100%;
+        max-width: 390px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
       }
       .phone {
         width: 100%;
-        max-width: 480px;
+        max-width: 390px;
         height: 100dvh;
         max-height: none;
         border: 0;
@@ -1107,24 +1095,33 @@
         width: 100%;
         height: 100dvh;
       }
+      /* On real mobile devices, use native status bar */
+      .status-bar, .notch, .demo-tag {
+        display: none;
+      }
+      .bottom-nav {
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="workspace">
-  <!-- Desktop Left Column: WalkWise Concept & Brand Guide Showcase -->
+  <!-- Desktop Left Column: Brand Showcase from Source Image -->
   <aside class="brand-showcase" aria-label="WalkWise Brand Reference">
-    <div class="header-logo">
-      <img src="assets/walkwise-logo.png" alt="WalkWise — WALK SMARTER, LIVE BRIGHTER" style="width: 100%; height: auto; mix-blend-mode: multiply;" width="573" height="166">
+    <div class="brand-header-wrap">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:4px;">
+        <img src="assets/walkwise-icon.png" alt="WalkWise App Icon" width="48" height="48" style="width:48px;height:48px;border-radius:12px;box-shadow:var(--shadow-sm);flex-shrink:0;">
+        <img src="assets/walkwise-logo.png" alt="WalkWise — WALK SMARTER, LIVE BRIGHTER" class="brand-logo-img">
+      </div>
+      <p class="brand-arabic-slogan" lang="ar" dir="rtl">من أقصر طريق إلى أكثر طريق راحة</p>
     </div>
-
-    <p class="arabic-tagline" lang="ar" dir="rtl">من أقصر طريق إلى أكثر طريق راحة</p>
 
     <div class="brand-card">
       <h4>The Concept</h4>
-      <h1 style="font-size: 20px; margin-bottom: 8px;">From the Shortest Route to the Most Comfortable Route.</h1>
-      <p class="concept-text">
+      <h2>From the Shortest Route to the Most Comfortable Route.</h2>
+      <p class="concept-desc">
         WalkWise is a pedestrian-focused platform designed for Jeddah, that helps people explore and compare walking routes not just by distance, but by comfort. It highlights shaded paths, seating areas, nearby facilities, and accessible sidewalks, encouraging a safer, healthier, and more enjoyable walking experience in the city.
       </p>
     </div>
@@ -1161,14 +1158,14 @@
     </div>
 
     <div class="brand-card">
-      <h4>Interactive Prototypes (From Branding)</h4>
+      <h4>Interactive Screens (From Branding Reference)</h4>
       <div class="screen-pills">
         <button class="screen-pill" onclick="go('home')">1 Home & Search</button>
         <button class="screen-pill" onclick="go('explore')">2 Explore Routes</button>
         <button class="screen-pill" onclick="go('compare')">3 Compare Routes</button>
         <button class="screen-pill" onclick="go('planner')">Hourly Planner</button>
         <button class="screen-pill" onclick="go('saved')">Saved Routes</button>
-        <button class="screen-pill" onclick="go('profile')">Profile & Settings</button>
+        <button class="screen-pill" onclick="go('profile')">Profile & RTL</button>
       </div>
     </div>
 
@@ -1181,7 +1178,7 @@
         </div>
         <div class="brand-feature">
           <span class="icon-badge"><svg class="icon-sm" viewBox="0 0 24 24"><path d="M3 12h18v4H3zM5 16v5M19 16v5M5 12V6h14v6"/></svg></span>
-          <span><b>Seating Areas:</b> Rest benches along the path</span>
+          <span><b>Seating Areas:</b> Rest pergolas & benches</span>
         </div>
         <div class="brand-feature">
           <span class="icon-badge"><svg class="icon-sm" viewBox="0 0 24 24"><path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13z"/></svg></span>
@@ -1198,12 +1195,23 @@
       </div>
     </div>
 
+    <div class="brand-card">
+      <h4>Visual Direction</h4>
+      <div class="visual-dir-wrap">
+        <span class="visual-pill">🌿 Nature & Comfort</span>
+        <span class="visual-pill">☀️ Warm & Inviting</span>
+        <span class="visual-pill">👤 Human-Centered</span>
+        <span class="visual-pill">📍 Designed for Jeddah</span>
+        <span class="visual-pill">💚 Healthy & Active</span>
+      </div>
+    </div>
+
     <div class="quote-box">
       “WalkWise makes walking in Jeddah more comfortable, inclusive, and enjoyable for everyone.”
     </div>
   </aside>
 
-  <!-- Interactive Mobile Experience -->
+  <!-- Phone Mockup Container -->
   <div class="phone-container">
     <div class="phone-toggle-bar">
       <span>Preview:</span>
@@ -1261,15 +1269,15 @@ function icon(name, cls = 'icon') {
   return `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ICONS.walk}</svg>`;
 }
 
-/* WalkWise Vector Logo Mark SVG */
-function walkwiseLogoSVG(width = 200, height = 58) {
-  return `<svg class="walkwise-brand-svg" width="${width}" height="${height}" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+/* Vector WalkWise Full Logo SVG */
+function walkwiseLogoFullSVG(width = 240, height = 62) {
+  return `<svg class="walkwise-brand-svg" width="${width}" height="${height}" viewBox="0 0 300 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <!-- Stylized "W" WalkWise Mark -->
-    <g transform="translate(4, 8)">
-      <!-- Left Leg (Pill) -->
-      <rect x="0" y="28" width="16" height="38" rx="8" transform="rotate(-32 0 28)" fill="#0F3D33"/>
-      <!-- Right Leg (Pill) -->
-      <rect x="22" y="28" width="16" height="38" rx="8" transform="rotate(-32 22 28)" fill="#0F3D33"/>
+    <g transform="translate(6, 6)">
+      <!-- Left Pill Stroke -->
+      <rect x="0" y="28" width="16" height="38" rx="8" transform="rotate(-30 0 28)" fill="#0F3D33"/>
+      <!-- Right Pill Stroke -->
+      <rect x="22" y="28" width="16" height="38" rx="8" transform="rotate(-30 22 28)" fill="#0F3D33"/>
       <!-- Sunset Gold Head / Sun -->
       <circle cx="28" cy="8" r="9" fill="#D9A86C"/>
       <!-- Sage Green Leaf -->
@@ -1279,42 +1287,51 @@ function walkwiseLogoSVG(width = 200, height = 58) {
       <circle cx="58" cy="38" r="4.5" fill="#0F3D33"/>
     </g>
     <!-- Brand Typography -->
-    <text x="82" y="44" font-family="Poppins, sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5" fill="#0F3D33">Walk<tspan fill="#6B8F71">Wise</tspan></text>
-    <text x="84" y="62" font-family="Poppins, sans-serif" font-weight="600" font-size="8.5" letter-spacing="3.8" fill="#0F3D33">WALK SMARTER, LIVE BRIGHTER</text>
+    <text x="84" y="42" font-family="Poppins, sans-serif" font-weight="700" font-size="34" letter-spacing="-0.5" fill="#0F3D33">Walk<tspan fill="#6B8F71">Wise</tspan></text>
+    <text x="86" y="58" font-family="Poppins, sans-serif" font-weight="600" font-size="8.5" letter-spacing="3.8" fill="#0F3D33">WALK SMARTER, LIVE BRIGHTER</text>
   </svg>`;
 }
 
 /* Jeddah Waterfront Scenic Vector Illustration */
-function jeddahSkylineArt() {
-  return `<svg class="hero-skyline" viewBox="0 0 400 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Red Sea Water -->
-    <path d="M0 85 C80 82, 160 88, 240 84 C320 80, 360 86, 400 84 L400 120 L0 120 Z" fill="#C4D6C3"/>
-    <path d="M0 95 C100 93, 200 97, 300 94 C360 92, 380 96, 400 95 L400 120 L0 120 Z" fill="#A9C4B5"/>
+function jeddahScenicArt() {
+  return `<svg class="hero-corniche-art" viewBox="0 0 400 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Soft Red Sea Water -->
+    <path d="M0 75 C90 70, 180 78, 270 72 C340 68, 380 74, 400 72 L400 130 L0 130 Z" fill="#C4D6C3"/>
+    <path d="M0 90 C80 88, 190 94, 290 89 C360 86, 380 92, 400 90 L400 130 L0 130 Z" fill="#A9C4B5"/>
     <!-- Jeddah Shoreline Path -->
-    <path d="M0 102 C120 100, 240 104, 400 101 L400 120 L0 120 Z" fill="#F5E9D7"/>
-    <!-- Palm Trees Silhouettes -->
-    <g fill="#0F3D33" opacity="0.3">
-      <!-- Palm 1 -->
-      <path d="M30 102 Q35 75 36 65 Q37 75 42 102 Z"/>
-      <circle cx="36" cy="65" r="8"/>
-      <path d="M36 65 Q20 55 12 60 Q26 62 36 65 Z"/>
-      <path d="M36 65 Q48 52 58 58 Q46 62 36 65 Z"/>
-      <path d="M36 65 Q35 45 40 46 Q38 56 36 65 Z"/>
-      <!-- Palm 2 -->
-      <path d="M65 104 Q68 80 70 72 Z" stroke="#0F3D33" stroke-width="3"/>
-      <circle cx="70" cy="72" r="6"/>
-      <path d="M70 72 Q56 64 50 68 Q62 69 70 72 Z"/>
-      <path d="M70 72 Q82 62 88 67 Q78 70 70 72 Z"/>
-      <!-- Jeddah Tower Silhouette in Distance -->
-      <path d="M330 102 L334 35 L336 35 L340 102 Z" fill="#0F3D33"/>
-      <!-- Modern Pavilion Silhouettes -->
-      <rect x="280" y="86" width="30" height="16" rx="3"/>
-      <rect x="355" y="88" width="22" height="14" rx="2"/>
+    <path d="M0 106 C120 102, 240 108, 400 104 L400 130 L0 130 Z" fill="#F5E9D7"/>
+    <!-- Coastal Palm Trees and City Silhouettes -->
+    <g fill="#0F3D33" opacity="0.32">
+      <!-- Palm Left -->
+      <path d="M34 106 Q39 80 40 70 Q41 80 46 106 Z"/>
+      <circle cx="40" cy="70" r="7"/>
+      <path d="M40 70 Q24 60 16 64 Q30 67 40 70 Z"/>
+      <path d="M40 70 Q52 56 62 62 Q50 67 40 70 Z"/>
+      <path d="M40 70 Q39 50 44 51 Q42 61 40 70 Z"/>
+      <!-- Palm Center-Left -->
+      <path d="M72 108 Q75 84 77 76 Z" stroke="#0F3D33" stroke-width="3"/>
+      <circle cx="77" cy="76" r="5.5"/>
+      <path d="M77 76 Q63 68 57 72 Q69 73 77 76 Z"/>
+      <path d="M77 76 Q89 66 95 71 Q85 74 77 76 Z"/>
+      <!-- Palm Far Right -->
+      <path d="M365 106 Q368 84 370 74 Z" stroke="#0F3D33" stroke-width="3"/>
+      <circle cx="370" cy="74" r="6"/>
+      <path d="M370 74 Q354 64 348 68 Q360 70 370 74 Z"/>
+      <path d="M370 74 Q382 62 390 68 Q378 72 370 74 Z"/>
+      <!-- Jeddah Skyline / Corniche Modern Tower Silhouette -->
+      <path d="M330 106 L334 40 L336 40 L340 106 Z"/>
+      <rect x="312" y="88" width="12" height="18" rx="2"/>
+      <rect x="290" y="92" width="16" height="14" rx="2"/>
+      <!-- Pedestrians walking silhouette on promenade -->
+      <circle cx="110" cy="98" r="2.5"/>
+      <path d="M109 101 L111 106"/>
+      <circle cx="116" cy="99" r="2.5"/>
+      <path d="M115 102 L117 106"/>
     </g>
   </svg>`;
 }
 
-/* Walkways Database */
+/* Walkways Data */
 const WALKS = [
   {
     id: 0,
@@ -1372,16 +1389,16 @@ const HOURS = [
   { h: 20, t: 28, f: 30, hum: 70, label: 'Cooler · Illuminated path', score: 86 }
 ];
 
-/* Application State */
+/* App State */
 let state = {
-  screen: 'home', // 'home', 'explore', 'compare', 'details', 'planner', 'filters', 'saved', 'profile', 'report', 'reported'
+  screen: 'home',
   walkId: 0,
-  activeRoute: 'comfort', // 'comfort' or 'shortest'
-  viewMode: 'map', // 'map' or 'list'
+  activeRoute: 'comfort',
+  viewMode: 'map',
   query: '',
   origin: 'King Abdulaziz University',
   destination: 'Jeddah Corniche',
-  activeFilters: ['shade', 'water', 'seating'], // 'shade', 'seating', 'water', 'access', 'services'
+  activeFilters: ['shade', 'water', 'seating'],
   savedWalks: [0],
   selectedHour: 18,
   selectedDay: 'Today',
@@ -1389,11 +1406,26 @@ let state = {
   arabicMode: false
 };
 
-// Local storage persistence
+// Local storage
 try {
   const saved = localStorage.getItem('walkwise_saved');
   if (saved) state.savedWalks = JSON.parse(saved);
 } catch (e) {}
+
+// URL Hash routing on load
+if (location.hash) {
+  const h = location.hash.replace('#', '');
+  if (['home', 'explore', 'compare', 'details', 'planner', 'filters', 'saved', 'profile', 'report'].includes(h)) {
+    state.screen = h;
+  }
+}
+window.addEventListener('hashchange', () => {
+  const h = location.hash.replace('#', '');
+  if (h && state.screen !== h) {
+    state.screen = h;
+    render();
+  }
+});
 
 const app = document.getElementById('app');
 const bottomNav = document.getElementById('bottom-nav');
@@ -1415,6 +1447,7 @@ function toast(msg) {
 function go(screenName, id) {
   state.screen = screenName;
   if (id !== undefined) state.walkId = id;
+  location.hash = screenName;
   render();
   app.scrollTop = 0;
   updateDesktopScreenPills();
@@ -1489,28 +1522,31 @@ function renderHomeScreen() {
   ];
 
   return `
-    <div class="home-header">
+    <!-- Mockup 1 Top Header -->
+    <div class="home-top-bar">
       <button class="btn-circle" aria-label="Menu" onclick="toast('WalkWise Jeddah Navigation Menu')">
         ${icon('menu')}
       </button>
-      <div style="display:flex;align-items:center;gap:6px;">
-        <span style="font-size:12px;font-weight:600;color:var(--primary-green);">${icon('pin', 'icon-sm')} Jeddah</span>
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span style="font-size:12px;font-weight:700;color:var(--primary-green);display:flex;align-items:center;gap:4px;">${icon('pin', 'icon-sm')} Jeddah</span>
       </div>
       <button class="btn-circle" aria-label="Profile" onclick="go('profile')">
         ${icon('profile')}
       </button>
     </div>
 
-    <!-- Hero Branding Area -->
-    <div class="hero-banner">
-      ${jeddahSkylineArt()}
-      <div class="logo-hero-wrap">
-        ${walkwiseLogoSVG(230, 68)}
-        <p class="arabic-hero-slogan" lang="ar">من أقصر طريق إلى أكثر طريق راحة</p>
+    <!-- Mockup 1 Hero Banner Area: Palm trees, waterfront, prominent WalkWise logo -->
+    <div class="hero-banner-container">
+      ${jeddahScenicArt()}
+      <div class="hero-brand-center">
+        <img src="assets/walkwise-logo.png" alt="WalkWise — WALK SMARTER, LIVE BRIGHTER" style="width:230px;max-width:100%;height:auto;display:block;">
+        <p style="font-family:'Noto Sans Arabic',Tahoma,sans-serif;font-size:13.5px;font-weight:700;color:var(--primary-green);direction:rtl;" lang="ar">
+          من أقصر طريق إلى أكثر طريق راحة
+        </p>
       </div>
     </div>
 
-    <!-- Where do you want to go? Search Card -->
+    <!-- Mockup 1 "Where do you want to go?" Search Card -->
     <div class="search-card">
       <h3>Where do you want to go?</h3>
       <div class="search-inputs-wrap">
@@ -1533,7 +1569,7 @@ function renderHomeScreen() {
       </button>
     </div>
 
-    <!-- Customize Your Route -->
+    <!-- Mockup 1 "Customize Your Route" Feature Filters -->
     <div class="section-title">
       <span>Customize Your Route</span>
       <span style="font-size:11px;font-weight:500;color:var(--text-muted);">${state.activeFilters.length} active</span>
@@ -1554,19 +1590,19 @@ function renderHomeScreen() {
     </div>
 
     <!-- Walking Window Forecast -->
-    <div class="pad" style="padding-top:12px;">
+    <div class="pad" style="padding-top:10px;">
       <div class="card" style="background:var(--warm-beige);border-color:#E5D7BD;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
             <span style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--primary-green);">Your walking window</span>
-            <h3 style="font-size:18px;margin:4px 0 6px;color:var(--primary-green);">Make time for the sea breeze.</h3>
-            <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">In Jeddah today, 6–8 PM is significantly cooler and shaded.</p>
+            <h3 style="font-size:17px;margin:3px 0 5px;color:var(--primary-green);">Make time for the sea breeze.</h3>
+            <p style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">In Jeddah today, 6–8 PM is significantly cooler and shaded.</p>
           </div>
           <div style="background:var(--surface);padding:8px;border-radius:50%;color:var(--sunset-gold);">
             ${icon('sun', 'icon-lg')}
           </div>
         </div>
-        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--surface-ivory);padding:4px 10px;border-radius:var(--radius-sm);font-size:11px;font-weight:600;margin-bottom:14px;">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--surface-ivory);padding:4px 10px;border-radius:var(--radius-sm);font-size:11px;font-weight:600;margin-bottom:12px;">
           ${icon('sun', 'icon-sm')} 29°C · Feels like 31°C
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
@@ -1591,33 +1627,33 @@ function renderHomeScreen() {
 function renderWalkCard(walk) {
   const isSaved = state.savedWalks.includes(walk.id);
   return `
-    <article class="card" style="margin-bottom:14px;padding:0;overflow:hidden;">
-      <div style="height:120px;background:var(--light-green);position:relative;display:flex;align-items:center;justify-content:center;">
-        <svg viewBox="0 0 320 120" style="width:100%;height:100%;" preserveAspectRatio="none">
-          <rect width="320" height="120" fill="#C4D6C3"/>
-          <path d="M0 60 Q100 40 200 70 T320 50 L320 120 L0 120 Z" fill="#A9C4B5"/>
-          <path d="M-20 110 Q140 60 340 75" fill="none" stroke="#F5E9D7" stroke-width="38"/>
+    <article class="card" style="margin-bottom:12px;padding:0;overflow:hidden;">
+      <div style="height:115px;background:var(--light-green);position:relative;display:flex;align-items:center;justify-content:center;">
+        <svg viewBox="0 0 320 115" style="width:100%;height:100%;" preserveAspectRatio="none">
+          <rect width="320" height="115" fill="#C4D6C3"/>
+          <path d="M0 60 Q100 40 200 70 T320 50 L320 115 L0 115 Z" fill="#A9C4B5"/>
+          <path d="M-20 110 Q140 60 340 75" fill="none" stroke="#F5E9D7" stroke-width="36"/>
           <path d="M-20 110 Q140 60 340 75" fill="none" stroke="#0F3D33" stroke-width="3" stroke-dasharray="6 4"/>
-          <circle cx="280" cy="28" r="14" fill="#D9A86C"/>
+          <circle cx="280" cy="26" r="13" fill="#D9A86C"/>
         </svg>
-        <span style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.92);padding:4px 10px;border-radius:var(--radius-sm);font-size:10px;font-weight:700;color:var(--primary-green);">
+        <span style="position:absolute;top:10px;left:10px;background:rgba(255,255,255,0.92);padding:3px 8px;border-radius:var(--radius-sm);font-size:10px;font-weight:700;color:var(--primary-green);">
           ${walk.id === 0 ? 'Sea views' : walk.id === 1 ? 'Everyday favourite' : 'A slower pace'}
         </span>
-        <button class="btn-circle" style="position:absolute;top:10px;right:10px;width:36px;height:36px;" aria-label="Save ${walk.name}" onclick="toggleSaved(${walk.id})">
+        <button class="btn-circle" style="position:absolute;top:8px;right:8px;width:34px;height:34px;" aria-label="Save ${walk.name}" onclick="toggleSaved(${walk.id})">
           <span style="color:${isSaved ? 'var(--primary-green)' : 'var(--text-muted)'}">${icon(isSaved ? 'check' : 'saved', 'icon-sm')}</span>
         </button>
       </div>
-      <div style="padding:16px;">
+      <div style="padding:14px;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
-            <h4 style="font-size:16px;font-weight:700;color:var(--primary-green);cursor:pointer;" onclick="go('details', ${walk.id})">${walk.name}</h4>
-            <p style="font-size:11px;color:var(--text-muted);margin:2px 0 8px;">${walk.area}</p>
+            <h4 style="font-size:15px;font-weight:700;color:var(--primary-green);cursor:pointer;" onclick="go('details', ${walk.id})">${walk.name}</h4>
+            <p style="font-size:11px;color:var(--text-muted);margin:2px 0 6px;">${walk.area}</p>
           </div>
-          <button class="btn-secondary" style="width:auto;padding:6px 12px;min-height:32px;font-size:11px;" onclick="go('details', ${walk.id})">
+          <button class="btn-secondary" style="width:auto;padding:5px 10px;min-height:30px;font-size:11px;" onclick="go('details', ${walk.id})">
             Details
           </button>
         </div>
-        <div style="display:flex;gap:14px;font-size:11px;font-weight:600;color:var(--text-muted);margin-top:6px;">
+        <div style="display:flex;gap:12px;font-size:11px;font-weight:600;color:var(--text-muted);margin-top:4px;">
           <span style="display:flex;align-items:center;gap:4px;">${icon('walk', 'icon-sm')} ${walk.distance} km</span>
           <span style="display:flex;align-items:center;gap:4px;">${icon('clock', 'icon-sm')} ${walk.time} min</span>
           <span style="display:flex;align-items:center;gap:4px;">${icon('leaf', 'icon-sm')} ${walk.shade}</span>
@@ -1632,7 +1668,7 @@ function renderWalkCard(walk) {
    ============================================================ */
 function renderExploreScreen() {
   return `
-    <!-- Top Route Pill Header -->
+    <!-- Top Route Search Summary Bar (Mockup 2) -->
     <div class="explore-top-bar">
       <button class="btn-circle" style="width:38px;height:38px;" aria-label="Back" onclick="go('home')">
         ${icon('back')}
@@ -1658,15 +1694,15 @@ function renderExploreScreen() {
 
     ${state.viewMode === 'map' ? renderExploreMap() : renderExploreList()}
 
-    <!-- Bottom Compare Card Action -->
+    <!-- Bottom Compare Action Banner -->
     <div class="pad" style="padding-top:0;">
-      <div class="card" style="background:var(--surface-ivory);border:1.5px solid var(--primary-green);display:flex;align-items:center;justify-content:space-between;padding:14px 18px;">
+      <div class="card" style="background:var(--surface-ivory);border:1.5px solid var(--primary-green);display:flex;align-items:center;justify-content:space-between;padding:12px 16px;">
         <div>
-          <span style="font-size:11px;font-weight:700;color:var(--sage-green);text-transform:uppercase;letter-spacing:0.5px;">Recommended Route</span>
-          <h4 style="font-size:15px;color:var(--primary-green);margin:2px 0;">Comfort Route (2.8 km · 38 min)</h4>
-          <span style="font-size:11px;color:var(--text-muted);">4× More Shade · 3 Water Stations · Benches</span>
+          <span style="font-size:10px;font-weight:700;color:var(--sage-green);text-transform:uppercase;letter-spacing:0.5px;">Recommended Route</span>
+          <h4 style="font-size:14px;color:var(--primary-green);margin:2px 0;">Comfort Route (2.8 km · 38 min)</h4>
+          <span style="font-size:10.5px;color:var(--text-muted);">4× More Shade · 3 Water Stations · Benches</span>
         </div>
-        <button class="btn-primary" style="width:auto;padding:10px 16px;min-height:38px;" onclick="go('compare')">
+        <button class="btn-primary" style="width:auto;padding:8px 14px;min-height:36px;font-size:12px;" onclick="go('compare')">
           Compare ${icon('arrow', 'icon-sm')}
         </button>
       </div>
@@ -1677,17 +1713,17 @@ function renderExploreScreen() {
 function renderExploreMap() {
   return `
     <div class="interactive-map-wrap" id="map-container">
-      <svg class="interactive-map-svg" viewBox="0 0 350 420" xmlns="http://www.w3.org/2000/svg">
+      <svg class="interactive-map-svg" viewBox="0 0 350 430" xmlns="http://www.w3.org/2000/svg">
         <!-- Red Sea Water on Left -->
-        <rect width="350" height="420" fill="#F5E9D7"/>
-        <path d="M0 0 H140 Q80 120 135 220 T95 420 H0 Z" fill="#C4D6C3"/>
-        <text x="25" y="210" fill="#0F3D33" font-size="11" font-weight="700" letter-spacing="3" transform="rotate(-90 25 210)" opacity="0.6">RED SEA</text>
+        <rect width="350" height="430" fill="#F5E9D7"/>
+        <path d="M0 0 H140 Q80 120 135 230 T95 430 H0 Z" fill="#C4D6C3"/>
+        <text x="25" y="215" fill="#0F3D33" font-size="11" font-weight="700" letter-spacing="3" transform="rotate(-90 25 215)" opacity="0.6">RED SEA</text>
 
-        <!-- City Blocks & Streets Grid in Warm Beige / Ivory -->
+        <!-- City Blocks & Streets Grid in Warm Ivory -->
         <g stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" fill="none">
-          <path d="M150 0 Q105 130 155 240 T130 420"/>
-          <path d="M220 0 L200 420"/>
-          <path d="M290 0 L270 420"/>
+          <path d="M150 0 Q105 130 155 240 T130 430"/>
+          <path d="M220 0 L200 430"/>
+          <path d="M290 0 L270 430"/>
           <path d="M110 80 H340"/>
           <path d="M130 180 H340"/>
           <path d="M110 280 H340"/>
@@ -1698,7 +1734,7 @@ function renderExploreMap() {
         <path d="M260 380 L205 285 L180 185 L145 90" stroke="#D9A86C" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M260 380 L205 285 L180 185 L145 90" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
 
-        <!-- 2. Comfort Route (Primary Green Line with Shaded Curves) -->
+        <!-- 2. Comfort Route (Primary Green Line with Shaded Canopy Curves) -->
         <path d="M260 380 L240 280 Q210 210 180 200 L155 130 L135 70" stroke="#0F3D33" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <!-- Shaded Canopy Accents on Comfort Route -->
         <path d="M240 280 Q210 210 180 200 L155 130" stroke="#6B8F71" stroke-width="4" fill="none" stroke-linecap="round"/>
@@ -1717,48 +1753,48 @@ function renderExploreMap() {
 
         <!-- Amenity Pins Placed Exactly on Routes -->
         <!-- Shaded Tree Pins -->
-        <g transform="translate(200, 240)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Shaded Canopy & Tree Corridor')">
+        <g transform="translate(200, 240)" style="cursor:pointer;" onclick="showPinTooltip(event, '🌳 Shaded Canopy & Tree Corridor')">
           <circle cx="0" cy="0" r="11" fill="#6B8F71" stroke="#FFFFFF" stroke-width="2.5"/>
           <path d="M-4 3 H4 M0 -4 V3" stroke="#FFFFFF" stroke-width="2"/>
         </g>
-        <g transform="translate(160, 160)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Lush Date Palm Walkway')">
+        <g transform="translate(160, 160)" style="cursor:pointer;" onclick="showPinTooltip(event, '🌳 Lush Date Palm Walkway')">
           <circle cx="0" cy="0" r="11" fill="#6B8F71" stroke="#FFFFFF" stroke-width="2.5"/>
           <path d="M-4 3 H4 M0 -4 V3" stroke="#FFFFFF" stroke-width="2"/>
         </g>
 
         <!-- Water Station Pins -->
-        <g transform="translate(182, 198)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Chilled Water Fountain (Free)')">
+        <g transform="translate(182, 198)" style="cursor:pointer;" onclick="showPinTooltip(event, '💧 Chilled Drinking Water Fountain')">
           <circle cx="0" cy="0" r="11" fill="#2F7C85" stroke="#FFFFFF" stroke-width="2.5"/>
           <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
         </g>
-        <g transform="translate(142, 110)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Corniche Water Dispenser')">
+        <g transform="translate(142, 110)" style="cursor:pointer;" onclick="showPinTooltip(event, '💧 Corniche Water Dispenser')">
           <circle cx="0" cy="0" r="11" fill="#2F7C85" stroke="#FFFFFF" stroke-width="2.5"/>
           <circle cx="0" cy="0" r="3" fill="#FFFFFF"/>
         </g>
 
         <!-- Seating Benches -->
-        <g transform="translate(230, 290)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Shaded Rest Pergola & Bench')">
+        <g transform="translate(230, 290)" style="cursor:pointer;" onclick="showPinTooltip(event, '🪑 Shaded Rest Pergola & Bench')">
           <circle cx="0" cy="0" r="11" fill="#0F3D33" stroke="#FFFFFF" stroke-width="2.5"/>
           <rect x="-4" y="-2" width="8" height="4" fill="#FFFFFF" rx="1"/>
         </g>
-        <g transform="translate(148, 85)" style="cursor:pointer;" onclick="showPinTooltip(event, 'Seafront Sunset Benches')">
+        <g transform="translate(148, 85)" style="cursor:pointer;" onclick="showPinTooltip(event, '🪑 Seafront Sunset Benches')">
           <circle cx="0" cy="0" r="11" fill="#0F3D33" stroke="#FFFFFF" stroke-width="2.5"/>
           <rect x="-4" y="-2" width="8" height="4" fill="#FFFFFF" rx="1"/>
         </g>
       </svg>
 
-      <!-- Floating Route Badges (Matching Mockup 2) -->
+      <!-- Floating Route Badges (Mockup 2) -->
       <div class="map-route-bubble bubble-comfort" onclick="go('compare')">
         <span>Comfort Route</span>
         <span style="font-size:9.5px;font-weight:500;">2.8 km · 38 min</span>
       </div>
 
       <div class="map-route-bubble bubble-shortest" onclick="go('compare')">
-        <span style="color:#9c6c2e;">Shortest Route</span>
+        <span style="color:#9C6C2E;">Shortest Route</span>
         <span style="font-size:9.5px;color:var(--text-muted);font-weight:500;">2.1 km · 27 min</span>
       </div>
 
-      <!-- Map Legend Bar (Matching Mockup 2 bottom bar) -->
+      <!-- Map Legend Bar (Mockup 2) -->
       <div class="map-legend-bar">
         <div class="legend-item">
           <span style="color:var(--sage-green);display:flex;">${icon('tree', 'icon-sm')}</span>
@@ -1784,39 +1820,39 @@ function showPinTooltip(evt, text) {
 function renderExploreList() {
   return `
     <div class="pad">
-      <div class="card" style="border:2px solid var(--primary-green);background:var(--surface-ivory);margin-bottom:14px;cursor:pointer;" onclick="go('compare')">
+      <div class="card" style="border:2px solid var(--primary-green);background:var(--surface-ivory);margin-bottom:12px;cursor:pointer;" onclick="go('compare')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
             <span class="recommended-badge"><span class="star">★</span> Recommended</span>
-            <h3 style="font-size:17px;color:var(--primary-green);margin:6px 0 2px;">Comfort Route</h3>
-            <p style="font-size:12px;color:var(--text-muted);">King Abdulaziz University → Jeddah Corniche</p>
+            <h3 style="font-size:16px;color:var(--primary-green);margin:6px 0 2px;">Comfort Route</h3>
+            <p style="font-size:11.5px;color:var(--text-muted);">${state.origin} → ${state.destination}</p>
           </div>
           <div style="text-align:right;">
-            <span style="font-size:18px;font-weight:700;color:var(--primary-green);">2.8 km</span>
-            <span style="display:block;font-size:12px;color:var(--text-muted);">38 min</span>
+            <span style="font-size:17px;font-weight:700;color:var(--primary-green);">2.8 km</span>
+            <span style="display:block;font-size:11px;color:var(--text-muted);">38 min</span>
           </div>
         </div>
-        <div style="display:flex;gap:12px;margin:12px 0 8px;font-size:11px;font-weight:600;color:var(--primary-green);">
+        <div style="display:flex;gap:12px;margin:10px 0 8px;font-size:11px;font-weight:600;color:var(--primary-green);">
           <span>🌳 85% Shaded</span>
           <span>🪑 3 Seating Pergolas</span>
           <span>💧 3 Water Fountains</span>
         </div>
-        <button class="btn-primary" style="margin-top:6px;">Select This Route ${icon('arrow')}</button>
+        <button class="btn-primary" style="margin-top:6px;padding:10px;">Select This Route ${icon('arrow')}</button>
       </div>
 
-      <div class="card" style="margin-bottom:14px;cursor:pointer;" onclick="go('compare')">
+      <div class="card" style="margin-bottom:12px;cursor:pointer;" onclick="go('compare')">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;">
           <div>
-            <span style="font-size:11px;font-weight:700;color:var(--sunset-gold);">Direct Path</span>
-            <h3 style="font-size:17px;color:var(--text-ink);margin:6px 0 2px;">Shortest Route</h3>
-            <p style="font-size:12px;color:var(--text-muted);">Direct street sidewalks</p>
+            <span style="font-size:10px;font-weight:700;color:var(--sunset-gold);">Direct Path</span>
+            <h3 style="font-size:16px;color:var(--text-ink);margin:6px 0 2px;">Shortest Route</h3>
+            <p style="font-size:11.5px;color:var(--text-muted);">Direct street sidewalks</p>
           </div>
           <div style="text-align:right;">
-            <span style="font-size:18px;font-weight:700;color:var(--text-ink);">2.1 km</span>
-            <span style="display:block;font-size:12px;color:var(--text-muted);">27 min</span>
+            <span style="font-size:17px;font-weight:700;color:var(--text-ink);">2.1 km</span>
+            <span style="display:block;font-size:11px;color:var(--text-muted);">27 min</span>
           </div>
         </div>
-        <div style="display:flex;gap:12px;margin:12px 0 8px;font-size:11px;color:var(--text-muted);">
+        <div style="display:flex;gap:12px;margin:10px 0 8px;font-size:11px;color:var(--text-muted);">
           <span>☀️ 20% Shaded</span>
           <span>🪑 1 Bench</span>
           <span>💧 1 Water Fountain</span>
@@ -1833,7 +1869,7 @@ function renderCompareScreen() {
   const isComfort = state.activeRoute === 'comfort';
 
   return `
-    <!-- Top Bar -->
+    <!-- Top Bar (Mockup 3) -->
     <div class="compare-header">
       <button class="btn-circle" style="width:38px;height:38px;" aria-label="Back" onclick="go('explore')">
         ${icon('back')}
@@ -1841,7 +1877,7 @@ function renderCompareScreen() {
       <h2>Compare Routes</h2>
     </div>
 
-    <!-- Side-by-Side Route Cards (Matching Mockup 3) -->
+    <!-- Side-by-Side Route Cards (Mockup 3) -->
     <div class="compare-cards-grid">
       <!-- Shortest Route -->
       <div class="route-card ${!isComfort ? 'selected' : ''}" onclick="state.activeRoute='shortest';render()">
@@ -1879,7 +1915,7 @@ function renderCompareScreen() {
       </div>
     </div>
 
-    <!-- Comparison Matrix (Matching Mockup 3 criteria) -->
+    <!-- Comparison Matrix Table (Mockup 3) -->
     <div class="matrix-card">
       <!-- Shade Coverage -->
       <div class="matrix-row">
@@ -1947,7 +1983,7 @@ function renderCompareScreen() {
       </div>
     </div>
 
-    <!-- Bottom Action Button (Matching Mockup 3) -->
+    <!-- Bottom Action Button (Mockup 3) -->
     <div class="pad" style="padding-top:0;">
       <button class="btn-primary" onclick="chooseRoute()">
         Choose This Route ${icon('arrow')}
@@ -1980,43 +2016,43 @@ function renderDetailsScreen() {
     </div>
 
     <div class="pad">
-      <div class="card" style="padding:0;overflow:hidden;margin-bottom:16px;">
-        <div style="height:160px;background:var(--light-green);position:relative;">
-          <svg viewBox="0 0 340 160" style="width:100%;height:100%;" preserveAspectRatio="none">
-            <rect width="340" height="160" fill="#C4D6C3"/>
-            <path d="M0 90 Q120 70 220 100 T340 80 L340 160 L0 160 Z" fill="#6B8F71"/>
-            <path d="M-20 160 Q140 90 360 110" fill="none" stroke="#F5E9D7" stroke-width="46"/>
-            <circle cx="280" cy="36" r="18" fill="#D9A86C"/>
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:14px;">
+        <div style="height:150px;background:var(--light-green);position:relative;">
+          <svg viewBox="0 0 340 150" style="width:100%;height:100%;" preserveAspectRatio="none">
+            <rect width="340" height="150" fill="#C4D6C3"/>
+            <path d="M0 90 Q120 70 220 100 T340 80 L340 150 L0 150 Z" fill="#6B8F71"/>
+            <path d="M-20 150 Q140 90 360 110" fill="none" stroke="#F5E9D7" stroke-width="44"/>
+            <circle cx="280" cy="34" r="16" fill="#D9A86C"/>
           </svg>
-          <span style="position:absolute;top:12px;left:12px;background:var(--surface-ivory);padding:4px 10px;border-radius:var(--radius-sm);font-size:10px;font-weight:700;color:var(--primary-green);">
+          <span style="position:absolute;top:10px;left:10px;background:var(--surface-ivory);padding:4px 10px;border-radius:var(--radius-sm);font-size:10px;font-weight:700;color:var(--primary-green);">
             Jeddah Walkway
           </span>
         </div>
         <div style="padding:16px;">
-          <h2 style="font-size:22px;color:var(--primary-green);">${walk.name}</h2>
-          <p style="font-size:12px;color:var(--text-muted);margin:4px 0 10px;">${icon('pin', 'icon-sm')} ${walk.area}</p>
-          <p style="font-size:13px;line-height:1.6;color:var(--text-ink);">${walk.desc}</p>
+          <h2 style="font-size:20px;color:var(--primary-green);">${walk.name}</h2>
+          <p style="font-size:12px;color:var(--text-muted);margin:3px 0 8px;">${icon('pin', 'icon-sm')} ${walk.area}</p>
+          <p style="font-size:12.5px;line-height:1.6;color:var(--text-ink);">${walk.desc}</p>
         </div>
       </div>
 
       <!-- Quick Metrics -->
-      <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;margin-bottom:16px;">
+      <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;margin-bottom:14px;">
         <div class="card" style="text-align:center;padding:12px 6px;background:var(--surface-ivory);">
-          <strong style="font-size:18px;color:var(--primary-green);display:block;">${walk.distance} km</strong>
-          <span style="font-size:11px;color:var(--text-muted);">Route length</span>
+          <strong style="font-size:17px;color:var(--primary-green);display:block;">${walk.distance} km</strong>
+          <span style="font-size:10.5px;color:var(--text-muted);">Route length</span>
         </div>
         <div class="card" style="text-align:center;padding:12px 6px;background:var(--surface-ivory);">
-          <strong style="font-size:18px;color:var(--primary-green);display:block;">${walk.time} min</strong>
-          <span style="font-size:11px;color:var(--text-muted);">Easy pace</span>
+          <strong style="font-size:17px;color:var(--primary-green);display:block;">${walk.time} min</strong>
+          <span style="font-size:10.5px;color:var(--text-muted);">Easy pace</span>
         </div>
         <div class="card" style="text-align:center;padding:12px 6px;background:var(--surface-ivory);">
-          <strong style="font-size:18px;color:var(--primary-green);display:block;">${walk.shade}</strong>
-          <span style="font-size:11px;color:var(--text-muted);">Shade rating</span>
+          <strong style="font-size:17px;color:var(--primary-green);display:block;">${walk.shade}</strong>
+          <span style="font-size:10.5px;color:var(--text-muted);">Shade rating</span>
         </div>
       </div>
 
       <!-- When to go recommendation -->
-      <div class="card" style="background:var(--warm-beige);border-color:#E3D6C1;margin-bottom:16px;">
+      <div class="card" style="background:var(--warm-beige);border-color:#E3D6C1;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
           ${icon('clock', 'icon-sm')}
           <b style="font-size:13px;color:var(--primary-green);">When is the best time to go?</b>
@@ -2030,39 +2066,39 @@ function renderDetailsScreen() {
       </div>
 
       <!-- Facilities List -->
-      <h3 style="font-size:16px;color:var(--primary-green);margin-bottom:12px;">Comfort & Facilities</h3>
-      <div class="card" style="margin-bottom:16px;">
+      <h3 style="font-size:15px;color:var(--primary-green);margin-bottom:10px;">Comfort & Facilities</h3>
+      <div class="card" style="margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--border-line);">
-          <span style="width:34px;height:34px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('bench', 'icon-sm')}</span>
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('bench', 'icon-sm')}</span>
           <div>
-            <b style="font-size:13px;">Seating Areas</b>
-            <span style="display:block;font-size:11px;color:var(--text-muted);">${walk.benches} rest benches along path</span>
+            <b style="font-size:12.5px;">Seating Areas</b>
+            <span style="display:block;font-size:10.5px;color:var(--text-muted);">${walk.benches} rest benches along path</span>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--border-line);">
-          <span style="width:34px;height:34px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('water', 'icon-sm')}</span>
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('water', 'icon-sm')}</span>
           <div>
-            <b style="font-size:13px;">Drinking Water</b>
-            <span style="display:block;font-size:11px;color:var(--text-muted);">${walk.water ? 'Chilled drinking water fountains available' : 'Carry your own bottle'}</span>
+            <b style="font-size:12.5px;">Drinking Water</b>
+            <span style="display:block;font-size:10.5px;color:var(--text-muted);">${walk.water ? 'Chilled drinking water fountains available' : 'Carry your own bottle'}</span>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--border-line);">
-          <span style="width:34px;height:34px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('services', 'icon-sm')}</span>
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('services', 'icon-sm')}</span>
           <div>
-            <b style="font-size:13px;">Cafés & Restrooms</b>
-            <span style="display:block;font-size:11px;color:var(--text-muted);">${walk.cafe ? 'Restrooms and beachside kiosks open' : 'Limited service facilities'}</span>
+            <b style="font-size:12.5px;">Cafés & Restrooms</b>
+            <span style="display:block;font-size:10.5px;color:var(--text-muted);">${walk.cafe ? 'Restrooms and beachside kiosks open' : 'Limited service facilities'}</span>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:12px;padding:8px 0;">
-          <span style="width:34px;height:34px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('access', 'icon-sm')}</span>
+          <span style="width:32px;height:32px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">${icon('access', 'icon-sm')}</span>
           <div>
-            <b style="font-size:13px;">Accessibility</b>
-            <span style="display:block;font-size:11px;color:var(--text-muted);">${walk.access ? '100% Step-free tactile path' : 'Some curbs along route'}</span>
+            <b style="font-size:12.5px;">Accessibility</b>
+            <span style="display:block;font-size:10.5px;color:var(--text-muted);">${walk.access ? '100% Step-free tactile path' : 'Some curbs along route'}</span>
           </div>
         </div>
       </div>
 
-      <button class="btn-secondary" style="margin-bottom:12px;" onclick="go('report')">
+      <button class="btn-secondary" style="margin-bottom:10px;" onclick="go('report')">
         Report an amenity update ${icon('arrow', 'icon-sm')}
       </button>
     </div>
@@ -2070,7 +2106,7 @@ function renderDetailsScreen() {
 }
 
 /* ============================================================
-   SCREEN: PLANNER (Preserves hourly walking conditions)
+   SCREEN: PLANNER (Hourly walking conditions in Jeddah)
    ============================================================ */
 function renderPlannerScreen() {
   const selected = HOURS.find(x => x.h === state.selectedHour) || HOURS[5];
@@ -2084,16 +2120,16 @@ function renderPlannerScreen() {
     </div>
 
     <div class="pad">
-      <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <div style="display:flex;gap:8px;margin-bottom:12px;">
         ${['Today', 'Tomorrow'].map(day => `
           <button class="seg-btn ${state.selectedDay === day ? 'active' : ''}" onclick="state.selectedDay='${day}';render()">${day}</button>
         `).join('')}
       </div>
 
-      <div class="card" style="background:var(--warm-beige);border-color:#E2D6C0;margin-bottom:16px;">
-        <span style="font-size:11px;font-weight:700;color:var(--primary-green);text-transform:uppercase;">Comfort Forecast</span>
+      <div class="card" style="background:var(--warm-beige);border-color:#E2D6C0;margin-bottom:14px;">
+        <span style="font-size:10px;font-weight:700;color:var(--primary-green);text-transform:uppercase;">Comfort Forecast</span>
         <h4 style="font-size:15px;margin:2px 0 4px;color:var(--primary-green);">Selected Hour: ${selected.h > 12 ? selected.h - 12 : selected.h} ${selected.h >= 12 ? 'PM' : 'AM'}</h4>
-        <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">${selected.label} · Humidity: ${selected.hum}%</p>
+        <p style="font-size:11.5px;color:var(--text-muted);margin-bottom:8px;">${selected.label} · Humidity: ${selected.hum}%</p>
         <span style="display:inline-flex;align-items:center;gap:6px;background:var(--surface);padding:4px 10px;border-radius:var(--radius-sm);font-size:11px;font-weight:700;color:var(--primary-green);">
           Comfort Score: ${selected.score} / 100
         </span>
@@ -2106,19 +2142,19 @@ function renderPlannerScreen() {
 
       ${HOURS.map(item => `
         <div class="hourly-row ${item.h === state.selectedHour ? 'selected' : ''}" onclick="state.selectedHour=${item.h};render()">
-          <b style="font-size:13px;color:var(--primary-green);">${item.h > 12 ? item.h - 12 : item.h} ${item.h >= 12 ? 'PM' : 'AM'}</b>
+          <b style="font-size:12.5px;color:var(--primary-green);">${item.h > 12 ? item.h - 12 : item.h} ${item.h >= 12 ? 'PM' : 'AM'}</b>
           <div>
-            <span style="font-size:11px;color:var(--text-muted);display:block;">${item.label}</span>
+            <span style="font-size:10.5px;color:var(--text-muted);display:block;">${item.label}</span>
             <div class="comfort-progress-bar">
               <div class="comfort-progress-fill" style="width:${item.score}%;"></div>
             </div>
           </div>
-          <span style="font-size:13px;font-weight:700;text-align:right;">${item.t}°</span>
-          <span style="font-size:12px;color:var(--text-muted);text-align:right;">${item.f}°</span>
+          <span style="font-size:12.5px;font-weight:700;text-align:right;">${item.t}°</span>
+          <span style="font-size:11.5px;color:var(--text-muted);text-align:right;">${item.f}°</span>
         </div>
       `).join('')}
 
-      <button class="btn-primary" style="margin-top:16px;" onclick="go('explore')">
+      <button class="btn-primary" style="margin-top:14px;" onclick="go('explore')">
         Explore Walks at ${state.selectedHour > 12 ? state.selectedHour - 12 : state.selectedHour} ${state.selectedHour >= 12 ? 'PM' : 'AM'} ${icon('arrow')}
       </button>
     </div>
@@ -2146,17 +2182,17 @@ function renderFiltersScreen() {
     </div>
 
     <div class="pad">
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">
+      <p style="font-size:12.5px;color:var(--text-muted);margin-bottom:14px;">
         Customize what makes your walk in Jeddah enjoyable, safe, and comfortable.
       </p>
 
       ${options.map(opt => {
         const active = state.activeFilters.includes(opt.key);
         return `
-          <div class="card" style="margin-bottom:12px;cursor:pointer;border-color:${active ? 'var(--primary-green)' : 'var(--border-subtle)'};background:${active ? 'var(--surface-ivory)' : 'var(--surface)'};" onclick="toggleFilter('${opt.key}')">
+          <div class="card" style="margin-bottom:10px;cursor:pointer;border-color:${active ? 'var(--primary-green)' : 'var(--border-subtle)'};background:${active ? 'var(--surface-ivory)' : 'var(--surface)'};" onclick="toggleFilter('${opt.key}')">
             <div style="display:flex;align-items:center;justify-content:space-between;">
               <div>
-                <b style="font-size:14px;color:var(--primary-green);">${opt.label}</b>
+                <b style="font-size:13.5px;color:var(--primary-green);">${opt.label}</b>
                 <p style="font-size:11px;color:var(--text-muted);margin-top:2px;">${opt.desc}</p>
               </div>
               <div style="width:24px;height:24px;border-radius:50%;background:${active ? 'var(--primary-green)' : 'var(--warm-beige)'};color:#fff;display:grid;place-items:center;">
@@ -2167,7 +2203,7 @@ function renderFiltersScreen() {
         `;
       }).join('')}
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
         <button class="btn-secondary" onclick="state.activeFilters=[];render()">Reset</button>
         <button class="btn-primary" onclick="go('explore')">Apply Filters</button>
       </div>
@@ -2187,19 +2223,19 @@ function renderSavedScreen() {
     </div>
 
     <div class="pad">
-      <div style="margin-bottom:16px;">
-        <span style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--sage-green);">Your Collection</span>
-        <h2 style="font-size:20px;color:var(--primary-green);margin-top:2px;">Ready for your next walk</h2>
+      <div style="margin-bottom:14px;">
+        <span style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--sage-green);">Your Collection</span>
+        <h2 style="font-size:19px;color:var(--primary-green);margin-top:2px;">Ready for your next walk</h2>
         <p style="font-size:12px;color:var(--text-muted);">Saved routes are stored offline on this device.</p>
       </div>
 
       ${savedItems.length ? savedItems.map(renderWalkCard).join('') : `
-        <div class="card" style="text-align:center;padding:36px 16px;">
-          <div style="width:56px;height:56px;border-radius:50%;background:var(--warm-beige);margin:0 auto 12px;display:grid;place-items:center;color:var(--primary-green);">
+        <div class="card" style="text-align:center;padding:32px 16px;">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--warm-beige);margin:0 auto 10px;display:grid;place-items:center;color:var(--primary-green);">
             ${icon('saved', 'icon-lg')}
           </div>
-          <h4 style="font-size:16px;color:var(--primary-green);margin-bottom:4px;">No saved walks yet</h4>
-          <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Save your favorite coastal walks or neighbourhood loops to find them here.</p>
+          <h4 style="font-size:15px;color:var(--primary-green);margin-bottom:4px;">No saved walks yet</h4>
+          <p style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Save your favorite coastal walks or neighbourhood loops to find them here.</p>
           <button class="btn-primary" onclick="go('explore')">Explore Walks ${icon('arrow')}</button>
         </div>
       `}
@@ -2217,36 +2253,36 @@ function renderProfileScreen() {
     </div>
 
     <div class="pad">
-      <div class="card" style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-        <div style="width:52px;height:52px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">
+      <div class="card" style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <div style="width:50px;height:50px;border-radius:50%;background:var(--light-green);display:grid;place-items:center;color:var(--primary-green);">
           ${icon('profile', 'icon-lg')}
         </div>
         <div>
-          <h3 style="font-size:16px;color:var(--primary-green);">Jeddah Walker</h3>
-          <span style="font-size:12px;color:var(--text-muted);">Active Pedestrian Member</span>
+          <h3 style="font-size:15px;color:var(--primary-green);">Jeddah Walker</h3>
+          <span style="font-size:11.5px;color:var(--text-muted);">Active Pedestrian Member</span>
         </div>
       </div>
 
-      <div class="card" style="margin-bottom:16px;">
-        <h4 style="font-size:13px;color:var(--primary-green);margin-bottom:12px;">Walking Preferences</h4>
+      <div class="card" style="margin-bottom:14px;">
+        <h4 style="font-size:13px;color:var(--primary-green);margin-bottom:10px;">Walking Preferences</h4>
         <button class="btn-secondary" style="margin-bottom:10px;" onclick="go('filters')">
           ${icon('sliders', 'icon-sm')} Customize Route Criteria ${icon('arrow', 'icon-sm')}
         </button>
 
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--border-line);">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border-line);">
           <div>
-            <b style="font-size:13px;">Gentle Walking Reminders</b>
-            <span style="display:block;font-size:11px;color:var(--text-muted);">Alert for cooler evening walking windows</span>
+            <b style="font-size:12.5px;">Gentle Walking Reminders</b>
+            <span style="display:block;font-size:10.5px;color:var(--text-muted);">Alert for cooler evening walking windows</span>
           </div>
-          <button style="width:48px;height:28px;border-radius:14px;background:${state.remindersOn ? 'var(--primary-green)' : 'var(--border-line)'};position:relative;padding:2px;" onclick="state.remindersOn=!state.remindersOn;render();toast('Reminders updated')">
-            <span style="position:absolute;width:24px;height:24px;border-radius:50%;background:#fff;top:2px;left:${state.remindersOn ? '22px' : '2px'};transition:left 0.2s;"></span>
+          <button style="width:46px;height:26px;border-radius:13px;background:${state.remindersOn ? 'var(--primary-green)' : 'var(--border-line)'};position:relative;padding:2px;" onclick="state.remindersOn=!state.remindersOn;render();toast('Reminders updated')">
+            <span style="position:absolute;width:22px;height:22px;border-radius:50%;background:#fff;top:2px;left:${state.remindersOn ? '22px' : '2px'};transition:left 0.2s;"></span>
           </button>
         </div>
       </div>
 
-      <div class="card" style="margin-bottom:16px;">
-        <h4 style="font-size:13px;color:var(--primary-green);margin-bottom:8px;">Language / اللغة</h4>
-        <p style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">English & Arabic localization with mirrored layout</p>
+      <div class="card" style="margin-bottom:14px;">
+        <h4 style="font-size:13px;color:var(--primary-green);margin-bottom:6px;">Language / اللغة</h4>
+        <p style="font-size:11.5px;color:var(--text-muted);margin-bottom:10px;">English & Arabic localization with mirrored layout</p>
         <button class="btn-secondary" onclick="toggleLanguage()">
           ${state.arabicMode ? 'Switch to English' : 'التبديل إلى العربية (Arabic RTL)'}
         </button>
@@ -2254,10 +2290,10 @@ function renderProfileScreen() {
 
       <div class="card" style="background:var(--surface-ivory);">
         <h4 style="font-size:13px;color:var(--primary-green);margin-bottom:4px;">About WalkWise</h4>
-        <p style="font-size:12px;color:var(--text-muted);line-height:1.5;">
+        <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;">
           WalkWise is a pedestrian-focused platform designed for Jeddah, that helps people explore and compare walking routes not just by distance, but by comfort.
         </p>
-        <span style="display:block;font-size:10px;color:var(--text-muted);margin-top:10px;">Version 2.4 · Brand Aligned</span>
+        <span style="display:block;font-size:10px;color:var(--text-muted);margin-top:8px;">Version 2.4 · Brand Aligned</span>
       </div>
     </div>
   `;
@@ -2285,12 +2321,12 @@ function renderReportScreen() {
     </div>
 
     <div class="pad">
-      <h3 style="font-size:18px;color:var(--primary-green);margin-bottom:4px;">Report a Facility Update</h3>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">Route: ${walk.name}</p>
+      <h3 style="font-size:17px;color:var(--primary-green);margin-bottom:3px;">Report a Facility Update</h3>
+      <p style="font-size:11.5px;color:var(--text-muted);margin-bottom:14px;">Route: ${walk.name}</p>
 
       <form onsubmit="event.preventDefault();go('reported')">
-        <label style="display:block;font-size:12px;font-weight:700;color:var(--primary-green);margin-bottom:6px;">Type of Update</label>
-        <select style="width:100%;height:44px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:0 12px;margin-bottom:16px;background:var(--surface);" required>
+        <label style="display:block;font-size:12px;font-weight:700;color:var(--primary-green);margin-bottom:5px;">Type of Update</label>
+        <select style="width:100%;height:44px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:0 12px;margin-bottom:14px;background:var(--surface);" required>
           <option value="">Select update category</option>
           <option>Water Station Status</option>
           <option>Shade Canopy / Lighting Issue</option>
@@ -2299,8 +2335,8 @@ function renderReportScreen() {
           <option>Other Feedback</option>
         </select>
 
-        <label style="display:block;font-size:12px;font-weight:700;color:var(--primary-green);margin-bottom:6px;">Notes</label>
-        <textarea style="width:100%;height:100px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:10px;margin-bottom:16px;background:var(--surface);" placeholder="e.g. Drinking fountain near promenade entrance 2 is fully restored." required></textarea>
+        <label style="display:block;font-size:12px;font-weight:700;color:var(--primary-green);margin-bottom:5px;">Notes</label>
+        <textarea style="width:100%;height:90px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:10px;margin-bottom:14px;background:var(--surface);" placeholder="e.g. Drinking fountain near promenade entrance 2 is fully restored." required></textarea>
 
         <button type="submit" class="btn-primary">Submit Report ${icon('arrow')}</button>
       </form>
@@ -2310,12 +2346,12 @@ function renderReportScreen() {
 
 function renderReportedScreen() {
   return `
-    <div class="pad" style="text-align:center;padding-top:60px;">
-      <div style="width:64px;height:64px;border-radius:50%;background:var(--light-green);color:var(--primary-green);margin:0 auto 16px;display:grid;place-items:center;">
+    <div class="pad" style="text-align:center;padding-top:50px;">
+      <div style="width:60px;height:60px;border-radius:50%;background:var(--light-green);color:var(--primary-green);margin:0 auto 14px;display:grid;place-items:center;">
         ${icon('check', 'icon-lg')}
       </div>
-      <h2 style="font-size:22px;color:var(--primary-green);margin-bottom:8px;">Thank You for Contributing!</h2>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:24px;">Your report helps keep walking paths in Jeddah comfortable and accessible for everyone.</p>
+      <h2 style="font-size:20px;color:var(--primary-green);margin-bottom:6px;">Thank You for Contributing!</h2>
+      <p style="font-size:12.5px;color:var(--text-muted);margin-bottom:20px;">Your report helps keep walking paths in Jeddah comfortable and accessible for everyone.</p>
       <button class="btn-primary" onclick="go('home')">Back to Home</button>
     </div>
   `;
@@ -2343,7 +2379,7 @@ function render() {
 
   app.innerHTML = content;
 
-  // Render bottom navigation tabs
+  // Bottom Navigation tabs
   const navItems = [
     { key: 'home', label: 'Home', icon: 'home' },
     { key: 'explore', label: 'Explore', icon: 'explore' },
